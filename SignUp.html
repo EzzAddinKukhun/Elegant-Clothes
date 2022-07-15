@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+    , initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <script src="assets/js/wow.min.js"></script>
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style2.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="font-family: galaxy">
+
+  <div onclick="scrollToTheTopPage()" style="cursor: pointer; opacity: 0;" id="rollingbutton"
+    class="rolling-button bg-warning text-dark text-center">
+    <i style="font-size:30px ; margin-top: 25px; " class="fa-solid fa-angle-up"></i>
+
+  </div>
+
+  <div onclick="closeList()" id="overLay" class="over-lay">
+
+  </div>
+  <!--SHOPPING LIST DESIGN-->
+  <div id="storeList" class="store-list bg-light overflow-hidden">
+    <div class="container-list">
+      <div class="header-list d-flex align-items-center ">
+        <button onclick="closeList()" id="closeListBtn" style="margin-right:130px ; " type="button"
+          class="btn btn-light">
+          <i class="fa-solid fa-xmark"></i>
+          CLOSE
+        </button>
+
+        <h5 style="
+      transform: translateY(27%);">SHOPPING LIST</h5>
+      </div>
+      <hr>
+      <div id="list-items" class="list-items d-flex flex-column">
+
+      </div>
+      <div id="notify" class="notify d-flex flex-column align-items-center text-center">
+        <h5 style="font-size:15px ;">There is no items in the list</h5>
+        <h5 style="font-size:15px ;">Back to the store and start your shopping</h5>
+        <button type="button" class="btn ">
+          <i class="fa-solid fa-cart-shopping"></i>
+          BACK TO PRODUCTS
+        </button>
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- NAVBAR IN MOBILE VIEW -->
+  <div style="display:none ;" id="navlist" class="nav-mobile d-flex  bg-warning flex-column justify-content-around ">
+    <button type="button" class="btn  w-100   ">HOME</button>
+    <button type="button" class="btn  w-100  ">ABOUT US</button>
+    <div class="btn-group w-100 ">
+      <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        CLOTHES
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+    <div class="btn-group w-100 ">
+      <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        SHOES
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+    <div class="btn-group w-100 ">
+      <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        WATCHES
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+    <button type="button" class="btn  w-100  ">LogIn/SignUp</button>
+    <button type="button" class="btn  w-100  ">ABOUT US</button>
+
+
+
+  </div>
+
+
+
+  <!--HEADER DESIGN-->
+  <header class=" position-relative vh-20   wow slideInUp">
+    <section id="topheader" data-wow-duration="0.8s" class="fixed-top wow slideInDown topheader"
+      style="width:100% ; background-color: #000066; color: white; height:30px">
+
+      <div class="container d-flex align-items-center">
+        <div class="social-media">
+          <i class="fa-brands fa-facebook-f me-3"></i>
+          <i class="fa-brands fa-whatsapp me-3"></i>
+          <i class="fa-brands fa-instagram me-3"></i>
+          <i class="fa-brands fa-linkedin-in me-3"></i>
+        </div>
+        <div class="store-logo ms-auto " style="margin-top:6px ;">
+          <h6>SUMMER-2022</h6>
+        </div>
+        <div class="bur">
+          <i id="burger" onclick="viewNavMobile()" style="font-size: 15px; margin-left: 20px; cursor: pointer;"
+            class="fa-solid fa-bars burger"></i>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--FIRST ROW-->
+    <div data-wow-duration="0.8s" style="margin-top:50px ; margin-bottom: 5px;" class="first-row wow slideInDown">
+      <div class="container">
+        <div class="row">
+
+          <!--FIRST ROW-->
+          <div class="col-md-3 logo-div  ">
+            <img class="logo" src="assets/imgs/logo.jPG">
+          </div>
+          <div class="col-md-5 col-sm-8 ">
+            <div class="input-group mb-3 w-100">
+              <input type="text" class="form-control" placeholder="Search About Your Product"
+                aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <button style="background-color: #000066; color:white" class="input-group-text" id="basic-addon2">SEARCH</button>
+            </div>
+          </div>
+          <div id="login" style="display: block;" class="col-md-1">
+            <button style="background-color: #000066; color:white" onclick="displayLogInPop ()"  type="button" class="btn  w-100">LogIn</button>
+          </div>
+          <div id="signupp" style="display: block;" class="col-md-2">
+            <button style="background-color: #000066; color:white" onclick="goToSignUpPage()"  type="button" class="btn  w-100">SignUp</button>
+          </div>
+          <div id="myaccount" style="display: none;"  class="col-md-2">
+            <button  style="background-color: #000066; color:white" type="button" class="btn  w-100">My Account</button>
+          </div>
+          <div  id="logout" style="display: none;"  class="col-md-1">
+            <button style="background-color: #000066; color:white" onclick="logOut()"  type="button" class="btn  w-100">LogOut</button>
+          </div>
+
+          <div class="col-md-1 col-sm-2  ">
+            <button  id="btnViewList" onclick="viewBtn()" type="button" class="btn  w-100" style="background-color: #000066; color:white">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--SECOND ROW-->
+    <div data-wow-duration="0.8s" style="margin-bottom:20px ;" class="second-row w-100 col-12 wow slideInDown">
+      <div class="container">
+
+        <div class="tabs">
+          <button style="background-color: #000066; color:white" onclick="goToHomePage()" type="button" class="btn  w-15 ">HOME</button>
+          <button style="background-color: #000066; color:white" onclick="goToAboutUsPage()" type="button" class="btn  w-15  ">ABOUT US</button>
+          <button style="background-color: #000066; color:white" onclick="viewClothes()" type="button" class="btn  w-15 ">CLOTHES</button>
+          <button style="background-color: #000066; color:white" onclick="viewWatches()" type="button" class="btn  w-15 ">WATCHES</button>
+          <button style="background-color: #000066; color:white" type="button" class="btn  w-15 ">Favorites</button>
+          <button style="background-color: #000066; color:white" type="button" class="btn  w-15  ">CONTACT US</button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!--CONTENT OF PAGE-->
+
+
+
+
+  <!--SIGN UP FORM-->
+  <h2 class="wow fadeInUp" style="text-align: center;">Sign-Up Form</h2>
+  <div  style="margin-bottom: 100px; margin-top: 20px;"
+    class=" form d-flex  justify-content-center  flex-column position-relative wow fadeInUp ">
+
+    <!--FNAME-->
+    <div class="field d-flex mb-4 ">
+      <div class="icon-form ">
+        <i class="fa-solid fa-address-card"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="email" class="form-control" id="fname" placeholder="First Name">
+        <label for="floatingInput">First Name</label>
+      </div>
+
+    </div>
+
+    <!--LNAME-->
+    <div class="field d-flex mb-4">
+      <div class="icon-form ">
+        <i class="fa-solid fa-address-card"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="email" class="form-control" id="lname" placeholder="Last Name">
+        <label for="floatingInput">Last Name</label>
+      </div>
+
+    </div>
+
+    <!--BIRTHDATE-->
+    <div class="field d-flex mb-4">
+      <div class="icon-form ">
+        <i class="fa-solid fa-cake-candles"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="date" class="form-control" id="bdate" placeholder="Birthdate">
+        <label for="floatingInput">Birthdate</label>
+      </div>
+
+
+    </div>
+
+    <!--STATE & CITY-->
+    <div class="d-flex">
+      <div style="margin-right:100px ;" class="state d-flex mb-4">
+        <div style="margin-left: -5px;" class="icon-form ">
+          <i class="fa-solid fa-earth-americas"></i>
+        </div>
+
+        <div style="margin-top: 7px;" class="state-dropdown">
+          <select id="statename">
+            <option value="" selected disabled hidden>Choose Country</option>
+            <option value="Palestine">Palestine</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Syria">Syria</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Egypt">Egypt</option>
+            <option value="Iraq">Iraq</option>
+
+          </select>
+        </div>
+
+      </div>
+      <div class="city d-flex">
+        <div class="icon-form ">
+          <i class="fa-solid fa-city"></i>
+        </div>
+
+        <select id="cityname">
+          <option value="" selected disabled hidden>Choose City</option>
+          <option value="Jerusalem">Jerusalem</option>
+          <option value="Nablus">Nablus</option>
+          <option value="Hebron">Hebron</option>
+          <option value="Bethlehem">Bethlehem</option>
+          <option value="Jenin">Jenin</option>
+          <option value="Ramllah">Ramllah</option>
+
+        </select>
+
+      </div>
+
+
+    </div>
+
+    <!--ADDRESS-->
+    <div id="address" class="field d-flex mb-4 ">
+      <div class="icon-form ">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="email" class="form-control" id="address" placeholder="Address">
+        <label for="floatingInput">Address</label>
+      </div>
+
+    </div>
+
+    <!--PHONE NUMBER-->
+    <div class="field d-flex mb-4 ">
+      <div class="icon-form ">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="email" class="form-control" id="phone" placeholder="Phone Number">
+        <label for="floatingInput">Phone Number</label>
+      </div>
+
+    </div>
+
+    <!--EMAIL-->
+    <div class="field d-flex mb-4 ">
+      <div class="icon-form ">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="email" class="form-control" id="email" placeholder="Email Address">
+        <label for="floatingInput">Email Address</label>
+      </div>
+
+    </div>
+
+    <!--USERNAME-->
+    <div class="field d-flex mb-4">
+      <div class="icon-form ">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="text" class="form-control" id="username" placeholder="Username">
+        <label for="floatingInput">Username</label>
+      </div>
+
+    </div>
+
+    <!--PASSWORD-->
+    <div class="field d-flex mb-4">
+      <div class="icon-form ">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <label for="floatingInput">Password</label>
+      </div>
+
+    </div>
+
+    <!--CONFIRM-->
+    <div class="field d-flex mb-4">
+      <div class="icon-form ">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <div class="form-floating mb-3 w-100">
+        <input type="password" class="form-control" id="confirm" placeholder="Confirm Password">
+        <label for="floatingInput">Confirm Password</label>
+      </div>
+
+    </div>
+
+    <button style="background-color: #000066; color:white" onclick="signUp()" type="button" class="btn  w-25 ms-auto">Sign Up</button>
+
+
+
+
+  </div>
+
+
+  <!-- <div class="thank-pop-up translate-middle">
+    <div class="check-done">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <h2 class="thank-logo">Thank You!</h2>
+    <div class="acknlgmnt">
+      <p>Your details has been submitted successfully. Thanks!</p>
+    </div>
+    <div class="pop-up-btn">
+      <button class="">OK</button>
+
+
+    </div>
+  </div> -->
+
+  <!-- <div   id="opps" style="display: none;"  class="opps-pop-up wow fadeInUp  ">
+    <div style="background-color:darkred;" class="check-done">
+      <i class="fa-solid fa-exclamation"></i>
+        </div>
+    <h2 class="thank-logo">Opps!</h2>
+    <div class="acknlgmnt">
+      <p>Please try to fill all required fields. Thanks!</p>
+    </div>
+    <div  class="pop-up-btn">
+      <button style="background-color:darkred;" class="">OK</button>
+
+
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+  <!--FOOTER-->
+
+  <footer data-wow-offset="300" class="wow fadeInUp">
+    <div class="container mb-3">
+      <div class="row justify-content-around">
+
+        <div data-wow-offset="300" class="col-md-6 first-half text-white wow slideInLeft ">
+          <h1 style="color:white; padding-top: 50px">ELEGANT CLOTHES</h1>
+          <p style="text-align: justify">We are the ELEGANT COLTHES group, We have many branches in westbank, we have
+            the
+            first branch
+            in Nablus, and the second branch in jerusalem, and the third branch in hebron, and the forth branch
+            in Ramallah, and the last branch in Jenin. We forward to fame our products, and increase our sales, so
+            we have
+            to be the FIRST in saling clothes, which have High Quality
+          </p>
+          <h5>Location: Nablus/Rafedia</h5>
+          <h5>Phone:09 2398285</h5>
+
+        </div>
+        <div class="second-half container col-md-6">
+          <div class="row justify-content-between">
+            <div data-wow-offset="300" class="main-menu wow slideInRight col-6">
+              <h3 style="padding-top: 50px; color: white;">Main Menu</h3>
+              <ul class="d-flex flex-column">
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">About US</a>
+                </li>
+                <li>
+                  <a href="#">Clothes</a>
+                </li>
+                <li>
+                  <a href="#">Shoes</a>
+                </li>
+                <li>
+                  <a href="#">Watches</a>
+                </li>
+                <li>
+                  <a href="#">Watches</a>
+                </li>
+                <li>
+                  <a href="#">Contact Us</a>
+                </li>
+              </ul>
+
+            </div>
+            <div data-wow-offset="300" class="social-media-footer wow slideInRight col-6 pt-4">
+              <h3 style="margin-top: 20px; color: white;">REACH US</h3>
+              <div style="font-size:35px ;" class="social-media">
+                <i style="margin-right:10px ;" class="fa-brands fa-facebook-f"></i>
+                <i style="margin-right:10px ;" class="fa-brands fa-whatsapp"></i>
+                <i style="margin-right:10px ;" class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+    <hr data-wow-offset="20" class="wow fadeInUp" style="border-top: 2px white solid; width: 68%; margin: auto; ">
+    <div data-wow-offset="20" class="copy-right wow fadeInUp">
+      <h6>Copyright &copy; Elegant Clothes - 2022</h6>
+
+    </div>
+
+
+  </footer>
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    new WOW().init();
+  </script>
+  <script src="assets/js/test.js"></script>
+  <script src="assets/js/signup.js"></script>
+  <script src="assets/js/login.js"></script>
+  <script src="assets/js/mutual.js"></script>
+
+
+
+
+</body>
+
+</html>

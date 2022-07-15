@@ -1,0 +1,24 @@
+.logIn{
+    position: fixed;
+    top:25%; 
+    background-color: white;
+    border: 1px solid black;
+    width: 25%;
+    height: 35%;
+    left: 35%;
+    text-align: center;
+}
+
+.data-log-in{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.close-log-ing{
+    position: absolute;
+    top: 0;
+    right: 2%; 
+    cursor: pointer;
+
+}

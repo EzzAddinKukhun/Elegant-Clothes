@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+          , initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <script src="assets/js/wow.min.js"></script>
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="font-family: galaxy">
+    <div class="dashboard">
+        <div class="logo mt-4">
+            <h2 class="text-center">Dashboard</h2>
+        </div>
+        <hr class="w-75 m-auto mt-3">
+        <div class="buttons d-flex flex-column w-100 mt-4">
+            <div class="button-container d-flex">
+                <div class="icon w-25">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </div>
+                <div class="button w-75">
+                    <button onclick="showFirstPage()" class="w-100">New Product</button>
+                </div>
+
+            </div>
+            <div onclick="b2()" class="button-container d-flex">
+                <div class="icon w-25">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <div class="button w-75">
+                    <button class="w-100">Products</button>
+                </div>
+
+            </div>
+            <div onclick="b3()" class="button-container d-flex">
+                <div class="icon w-25">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="button w-75">
+                    <button class="w-100">Purchases</button>
+                </div>
+
+            </div>
+
+            <div onclick="logoutadmin ()" class="button-container d-flex">
+                <div class="icon w-25">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </div>
+                <div class="button w-75">
+                    <button class="w-100">Log Out</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--FIRST DIV-->
+    <div id="first_page" style="display:none;" class="first-page">
+        <h2 class="text-center pt-3">Add New Product</h2>
+        <div class="page-content d-flex">
+
+            <div class="form">
+                <form class="needs-validation" novalidate>
+                    <!--PRODUCT NAME-->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Product Name</label>
+                        <input id="name" type="text" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter Product Name" required>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+
+                    <!--PRODUCT CLASS-->
+                    <div style="margin-bottom: 25px" class="class">
+                        <label for="exampleInputEmail1">Product Class</label>
+                        <select id="class" class="form-select" aria-label="Default select example">
+                            <option selected disabled hidden>Select The Class Of Your Product</option>
+                            <option value="1">Clothes</option>
+                            <option value="2">Shoes</option>
+                            <option value="3">Watches</option>
+                        </select>
+                    </div>
+
+                    <!--PRODUCT DESCRIPTION-->
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Product Description</label>
+                        <textarea id="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Enter Your Description..."></textarea>
+                    </div>
+
+                    <!--PRICE-->
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Price ($)</label>
+                        <input id="price" type="text" class="form-control" id="exampleInputPassword1"
+                            placeholder="Enter The Price">
+                    </div>
+
+                    <!--COLORS-->
+                    <div style="margin-bottom: 30px;" class="colors ">
+                        <label class="mb-2" for="exampleInputPassword1">Available Colors</label>
+                        <div class="colors-checks d-flex justify-content-between">
+                            <div class="form-check">
+                                <input class="form-check-input clr" type="checkbox" value="Black" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Black
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input clr" type="checkbox" value="White" id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    White </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input clr" type="checkbox" value="Red" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Red
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input clr" type="checkbox" value="Green" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Green
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input clr" type="checkbox" value="Yellow"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Yellow </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input clr" type="checkbox" value="Blue" id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Blue </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--SIZES-->
+                    <div style="margin-bottom: 30px;" class="Sizes">
+                        <label class="mb-2" for="exampleInputPassword1">Available Sizes</label>
+                        <div class="colors-checks d-flex justify-content-between">
+                            <div class="form-check">
+                                <input class="form-check-input siz" type="checkbox" value="Small" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Small
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input siz" type="checkbox" value="Medium"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Medium </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input siz" type="checkbox" value="Large" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Large
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input siz" type="checkbox" value="X-Large"
+                                    id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    X-Large
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input siz" type="checkbox" value="XX-Large"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    XX-Large </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <button onclick="productUpload()" type="button" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="img-prod">
+                <img id="prod-img" src="assets/imgs/qmark.png">
+                <button onclick="uploadPhoto()" type="button" class="btn btn-primary upload">UPLOAD PHOTO</button>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--SECOND DIV-->
+    <div id="second_page" class="second-page">
+        <h2 class="text-center pt-3">Products List</h2>
+        <div style="margin-left: 72%;" class="form-floating mb-3 w-25">
+            <input onkeydown="searchByName(this.value)" type="text" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Search By Product Name</label>
+        </div>
+        <div style="width: 95%; margin:auto; height: 80vh; overflow-y: auto;" class="table-products">
+            <table class="table">
+                <thead style="text-align: center; " class="table-dark">
+                    <td style="width: 5%;">ID</td>
+                    <td style="width: 20%;">Product Img</td>
+                    <td style="width: 15%;">Product Name</td>
+                    <td style="width: 5%;">Class</td>
+                    <td style="width: 15%;">Product Description</td>
+                    <td style="width: 15%;">Size</td>
+                    <td style="width: 15%;">Colors</td>
+                    <td style="width: 5%;">Price</td>
+                    <td style="width: 5%;">Update</td>
+                    <td style="width: 5%;">Delete</td>
+                </thead>
+                <tbody id="productsTable">
+
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="third_page" class="third-page">
+        <h2 class="text-center pt-3">Purchases</h2>
+        <table style="width:95%; margin:auto" class="table table-hover text-center mt-5">
+            <thead style="background-color:#212529">
+                <tr style="color: white;">
+                    <td style="width:5%;">ID</td>
+                    <td style="width:10%;">Username</td>
+                    <td style="width:10%;">State/City</td>
+                    <td style="width:10%;">Address</td>
+                    <td style="width:10%;">Order Date</td>
+                    <td style="width:35%;">Pictures</td>
+                    <td style="width:10%;">Names</td>
+                    <td style="width:5%;">Value</td>
+                    <td style="width:5%;">Done</td>
+
+                </tr>
+
+            </thead>
+            <tbody id="tbody_pur">
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <!--UPDATE POP UP-->
+    <div id="update_pop_up" style="display:none ;" class="update-pop-up wow fadeInUp">
+        <h2 class="text-center mt-2">Update Product</h2>
+        <div style="width:95%; margin: auto;" class="content-update d-flex">
+            <div class="basic-info w-50">
+                <!--Name-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="updatename" aria-describedby="emailHelp">
+                </div>
+                <!--Description-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Product Description</label>
+                    <textarea class="form-control" id="updateDdesc" aria-describedby="emailHelp"></textarea>
+                </div>
+                <!--CLASS-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1">Product Class</label>
+                    <select id="updateclass" class="form-select" aria-label="Default select example">
+                        <option selected disabled hidden>Select The Class Of Your Product</option>
+                        <option value="1">Clothes</option>
+                        <option value="2">Shoes</option>
+                        <option value="3">Watches</option>
+                    </select>
+                    <div id="oldClass" class="form-text text-danger">We'll never share your email with anyone else.
+                    </div>
+
+                </div>
+                <!--Price-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="updatePrice" aria-describedby="emailHelp">
+                </div>
+
+                <!--COLORS-->
+                <div style="margin-bottom: 30px;" class="colors ">
+                    <label class="mb-2" for="exampleInputPassword1">Available Colors</label>
+                    <div class="update-colors-checks d-flex justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input upclr" type="checkbox" value="Black" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Black
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upclr" type="checkbox" value="White" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                White </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upclr" type="checkbox" value="Red" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Red
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upclr" type="checkbox" value="Green" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Green
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upclr" type="checkbox" value="Yellow" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Yellow </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upclr" type="checkbox" value="Blue" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Blue </label>
+                        </div>
+                    </div>
+                    <div id="oldcolors" class="form-text text-danger">We'll never share your email with anyone else.
+                    </div>
+
+                </div>
+
+                <!--SIZES-->
+                <div style="margin-bottom: 30px;" class="Sizes">
+                    <label class="mb-2" for="exampleInputPassword1">Available Sizes</label>
+                    <div class="colors-checks d-flex justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input upsiz" type="checkbox" value="Small" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Small
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upsiz" type="checkbox" value="Medium" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Medium </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upsiz" type="checkbox" value="Large" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Large
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upsiz" type="checkbox" value="X-Large" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                X-Large
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upsiz" type="checkbox" value="XX-Large"
+                                id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                XX-Large </label>
+                        </div>
+
+                    </div>
+                    <div id="oldsize" class="form-text text-danger">We'll never share your email with anyone else.</div>
+
+                </div>
+            </div>
+            <div class="update-photo w-50">
+                <div style="width:100% ; height:500px" id="updatedphoto" class="up-photo m-auto overflow-hidden   ">
+                    <img style="display: block; height:100%; margin:auto" id="edited_img" class="w-75 "
+                        src="assets/imgs/11.jpg">
+                </div>
+                <div id="chooseanotherphoto" class="another-photo">
+                    <button onclick="editedUploadedPhoto()" type="button" class="btn btn-primary upload">UPLOAD
+                        PHOTO</button>
+                </div>
+            </div>
+        </div>
+        <button style="margin-left:40% ;" onclick="submitUpdate()" type="button" class="btn btn-primary mt-5 ">Update
+            Data</button>
+
+        <div onclick="closeUpdateWindow()" class="close position-absolute top-0">
+            <i class="fa-solid fa-xmark"></i>
+
+        </div>
+    </div>
+
+    <!--OVERLAY-->
+    <div id="overlay" class="overlay" style="display: none;">
+
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/js/purchases.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+
+
+</body>
+
+</html>

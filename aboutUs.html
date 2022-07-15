@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<script src="assets/js/wow.min.js"></script>
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/style2.css">
+
+	<link rel="stylesheet" href="assets/css/login.css">
+	<link rel="stylesheet" href="assets/css/bill.css">
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		body {
+			margin: 0;
+			font-family: 'Roboto Condensed', sans-serif;
+		}
+
+
+		h1 {
+
+			color: #333;
+			font-weight: 700;
+			margin-top: 125px;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			line-height: 23px;
+		}
+
+		/* --- Start progress bar --- */
+
+		.process-wrapper {
+			margin: auto;
+			max-width: 1080px;
+		}
+
+		#progress-bar-container {
+			position: relative;
+			width: 90%;
+			margin: auto;
+			height: 100px;
+			margin-top: 65px;
+		}
+
+		#progress-bar-container ul {
+			padding: 0;
+			margin: 0;
+			padding-top: 15px;
+			z-index: 9999;
+			position: absolute;
+			width: 100%;
+			margin-top: -40px
+		}
+
+		#progress-bar-container li:before {
+			content: " ";
+			display: block;
+			margin: auto;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: solid 2px #aaa;
+			transition: all ease 0.3s;
+
+		}
+
+		#progress-bar-container li.active:before,
+		#progress-bar-container li:hover:before {
+			border: solid 2px #fff;
+
+			background: linear-gradient(to right, #E91E63 0%, #fff 100%);
+		}
+
+		#progress-bar-container li {
+			list-style: none;
+			float: left;
+			width: 20%;
+			text-align: center;
+			color: #aaa;
+			text-transform: uppercase;
+			font-size: 11px;
+			cursor: pointer;
+			font-weight: 700;
+			transition: all ease 0.2s;
+			vertical-align: bottom;
+			height: 60px;
+			position: relative;
+		}
+
+		#progress-bar-container li .step-inner {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			font-size: 14px;
+		}
+
+		#progress-bar-container li.active,
+		#progress-bar-container li:hover {
+			color: #444;
+		}
+
+		#progress-bar-container li:after {
+			content: " ";
+			display: block;
+			width: 6px;
+			height: 6px;
+			background: #777;
+			margin: auto;
+			border: solid 7px #fff;
+			border-radius: 50%;
+			margin-top: 40px;
+			box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+			transition: all ease 0.2s;
+
+		}
+
+		#progress-bar-container li:hover:after {
+			background: #555;
+		}
+
+		#progress-bar-container li.active:after {
+			background: #207893;
+		}
+
+		#progress-bar-container #line {
+			width: 80%;
+			margin: auto;
+			background: #eee;
+			height: 6px;
+			position: absolute;
+			left: 10%;
+			top: 57px;
+			z-index: 1;
+			border-radius: 50px;
+			transition: all ease 0.9s;
+		}
+
+		#progress-bar-container #line-progress {
+			content: " ";
+			width: 3%;
+			height: 100%;
+			background: #207893;
+			background: linear-gradient(to right, #207893 0%, #2ea3b7 100%);
+			position: absolute;
+			z-index: 2;
+			border-radius: 50px;
+			transition: all ease 0.9s;
+		}
+
+		#progress-content-section {
+			width: 90%;
+			margin: auto;
+			background: #f3f3f3;
+			border-radius: 4px;
+		}
+
+		#progress-content-section .section-content {
+			padding: 30px 40px;
+			text-align: center;
+		}
+
+		#progress-content-section .section-content h2 {
+			font-size: 17px;
+			text-transform: uppercase;
+			color: #333;
+			letter-spacing: 1px;
+		}
+
+		#progress-content-section .section-content p {
+			font-size: 16px;
+			line-height: 1.8em;
+			color: #777;
+		}
+
+		#progress-content-section .section-content {
+			display: none;
+			animation: FadeInUp 700ms ease 1;
+			animation-fill-mode: forwards;
+			transform: translateY(15px);
+			opacity: 0;
+		}
+
+		#progress-content-section .section-content.active {
+			display: block;
+		}
+
+		@keyframes FadeInUp {
+			0% {
+				transform: translateY(15px);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translateY(0px);
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+
+<body style="font-family: galaxy">
+
+
+	<div onclick="scrollToTheTopPage()" style="cursor: pointer; opacity: 0;" id="rollingbutton"
+		class="rolling-button bg-warning text-dark text-center">
+		<i style="font-size:30px ; margin-top: 25px; " class="fa-solid fa-angle-up"></i>
+
+	</div>
+
+	<div onclick="closeList()" id="overLay" class="over-lay">
+
+	</div>
+	<!--SHOPPING LIST DESIGN-->
+	<div id="storeList" class="store-list bg-light overflow-hidden">
+		<div class="container-list">
+			<div class="header-list d-flex align-items-center ">
+				<button onclick="closeList()" id="closeListBtn" style="margin-right:130px ; " type="button"
+					class="btn btn-light">
+					<i class="fa-solid fa-xmark"></i>
+					CLOSE
+				</button>
+
+				<h5 style="
+        transform: translateY(27%);">SHOPPING LIST</h5>
+			</div>
+			<hr>
+			<div id="list-items" class="list-items d-flex flex-column">
+
+			</div>
+			<div id="notify" class="notify d-flex flex-column align-items-center text-center">
+				<h5 style="font-size:15px ;">There is no items in the list</h5>
+				<h5 style="font-size:15px ;">Back to the store and start your shopping</h5>
+				<button type="button" class="btn ">
+					<i class="fa-solid fa-cart-shopping"></i>
+					BACK TO PRODUCTS
+				</button>
+
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<!-- NAVBAR IN MOBILE VIEW -->
+	<div style="display:none ;" id="navlist" class="nav-mobile d-flex  bg-warning flex-column justify-content-around ">
+		<button type="button" class="btn  w-100   ">HOME</button>
+		<button type="button" class="btn  w-100  ">ABOUT US</button>
+		<div class="btn-group w-100 ">
+			<button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				CLOTHES
+			</button>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Action</a></li>
+				<li><a class="dropdown-item" href="#">Another action</a></li>
+				<li><a class="dropdown-item" href="#">Something else here</a></li>
+				<li><a class="dropdown-item" href="#">Separated link</a></li>
+			</ul>
+		</div>
+		<div class="btn-group w-100 ">
+			<button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				SHOES
+			</button>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Action</a></li>
+				<li><a class="dropdown-item" href="#">Another action</a></li>
+				<li><a class="dropdown-item" href="#">Something else here</a></li>
+				<li><a class="dropdown-item" href="#">Separated link</a></li>
+			</ul>
+		</div>
+		<div class="btn-group w-100 ">
+			<button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				WATCHES
+			</button>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Action</a></li>
+				<li><a class="dropdown-item" href="#">Another action</a></li>
+				<li><a class="dropdown-item" href="#">Something else here</a></li>
+				<li><a class="dropdown-item" href="#">Separated link</a></li>
+			</ul>
+		</div>
+		<button type="button" class="btn  w-100  ">LogIn/SignUp</button>
+		<button type="button" class="btn  w-100  ">ABOUT US</button>
+
+
+
+	</div>
+
+
+
+	<!--HEADER DESIGN-->
+	<header class=" position-relative vh-20  wow slideInUp">
+		<section id="topheader" data-wow-duration="0.8s" class="fixed-top wow slideInDown topheader" style="width:100% ; background-color: #000066; color: white
+      ;; height:30px">
+
+			<div class="container d-flex align-items-center">
+				<div class="social-media">
+					<i class="fa-brands fa-facebook-f me-3"></i>
+					<i class="fa-brands fa-whatsapp me-3"></i>
+					<i class="fa-brands fa-instagram me-3"></i>
+					<i class="fa-brands fa-linkedin-in me-3"></i>
+				</div>
+				<div class="store-logo ms-auto " style="margin-top:6px ;">
+					<h6>SUMMER-2022</h6>
+				</div>
+				<div class="bur">
+					<i id="burger" onclick="viewNavMobile()"
+						style="font-size: 15px; margin-left: 20px; cursor: pointer;"
+						class="fa-solid fa-bars burger"></i>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<!--FIRST ROW-->
+		<div data-wow-duration="0.8s" style="margin-top:50px ; margin-bottom: 5px;" class="first-row wow slideInDown">
+			<div class="container">
+				<div class="row">
+
+					<!--FIRST ROW-->
+					<div class="col-md-3 logo-div  ">
+						<img class="logo" src="assets/imgs/logo.jPG">
+					</div>
+					<div class="col-md-5 col-sm-8 ">
+						<div class="input-group mb-3 w-100">
+							<input type="text" class="form-control" placeholder="Search About Your Product"
+								aria-label="Recipient's username" aria-describedby="basic-addon2">
+							<button style="background-color: #000066; color:white" class="input-group-text "
+								id="basic-addon2">SEARCH</button>
+						</div>
+					</div>
+					<div id="login" style="display: block;" class="col-md-1">
+						<button style="background-color: #000066; color:white" onclick="displayLogInPop ()"
+							type="button" class="btn  w-100">LogIn</button>
+					</div>
+					<div id="signupp" style="display: block;" class="col-md-2">
+						<button style="background-color: #000066; color:white" onclick="goToSignUpPage()" type="button"
+							class="btn  w-100">SignUp</button>
+					</div>
+					<div id="myaccount" style="display: none;" class="col-md-2">
+						<button style="background-color: #000066; color:white" type="button" class="btn w-100">My
+							Account</button>
+					</div>
+					<div id="logout" style="display: none;" class="col-md-1">
+						<button style="background-color: #000066; color:white" onclick="logOut()" type="button"
+							class="btn  w-100">LogOut</button>
+					</div>
+
+					<div class="col-md-1 col-sm-2  ">
+						<button style="background-color: #000066; color:white" id="btnViewList" onclick="viewBtn()"
+							type="button" class="btn  w-100">
+							<i class="fa-solid fa-cart-shopping"></i>
+						</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!--SECOND ROW-->
+		<div data-wow-duration="0.8s" style="margin-bottom:20px ;" class="second-row w-100 col-12 wow slideInDown">
+			<div class="container">
+
+				<div class="tabs">
+					<button style="background-color: #000066; color:white" onclick="goToHomePage()" type="button"
+						class="btn  w-15 ">HOME</button>
+					<button style="background-color: #000066; color:white" onclick="goToAboutUsPage()" type="button"
+						class="btn  w-15  ">ABOUT US</button>
+					<button style="background-color: #000066; color:white" onclick="viewClothes()" type="button"
+						class="btn  w-15 ">CLOTHES</button>
+					<button style="background-color: #000066; color:white" onclick="viewWatches()" type="button"
+						class="btn  w-15 ">WATCHES</button>
+					<button style="background-color: #000066; color:white" type="button"
+						class="btn  w-15 ">Favorites</button>
+					<button style="background-color: #000066; color:white" type="button" class="btn  w-15  ">CONTACT
+						US</button>
+
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+
+	<h1 class="wow fadeInUp">About Us</h1>
+	<br>
+	<div style="margin-bottom:200px ;" class="process-wrapper wow fadeInUp">
+		<div id="progress-bar-container">
+			<ul>
+				<li class="step step01 active">
+					<div class="step-inner">History</div>
+				</li>
+				<li class="step step02">
+					<div class="step-inner">Co-founders</div>
+				</li>
+				<li class="step step03">
+					<div class="step-inner">Trusted by 20000+ Clients</div>
+				</li>
+				<li class="step step04">
+					<div class="step-inner">Our Branches </div>
+				</li>
+				<li class="step step05">
+					<div class="step-inner">Costumer Srevices
+					</div>
+				</li>
+			</ul>
+
+			<div id="line">
+				<div id="line-progress"></div>
+			</div>
+		</div>
+
+		<div id="progress-content-section">
+			<div class="section-content discovery active">
+				<h2>History SECTION</h2>
+				<p>Istabraq for ready-made clothing co. One of the ELEGANT Investment Group Companies was established in
+					1973 To become one the best ancient industrial companies marked in the field of fashion and
+					uniforms. And has won numerous awards for the observance of the highest international quality
+					standards and best selection of the finest fabrics that suit eastern man.</p>
+			</div>
+
+			<div class="section-content strategy">
+				<h2>co-founder SECTION</h2>
+				<p>Jabal AlHussein - Adel Al Qasem Center
+					Jabal AlHussein - Maxim Mall 1st Floor
+					Alhashmi Alshamali - Anabtawi Traffic Light
+					Al Zarqa – Baghdad Street
+					Alwakalat Street – Next to Ward Wa Kabab</p>
+			</div>
+
+			<div class="section-content creative">
+				<h2>Trusted by 20000+ Clients </h2>
+				<p>This founding principle continues to motivate us today. We committed to working with their latest and
+					also best designers from all over the world to create high-quality products that would be available
+					to all men.</p>
+			</div>
+
+			<div class="section-content production">
+				<h2> Our Branches</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
+					ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
+					dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
+					mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
+					volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
+					orci.</p>
+			</div>
+
+			<div class="section-content analysis">
+				<h2>Costumer Srevices </h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum
+					ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in
+					dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor
+					mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas
+					volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit
+					orci.</p>
+			</div>
+		</div>
+	</div>
+
+	<footer data-wow-offset="300" class="wow fadeInUp">
+		<div class="container mb-3">
+			<div class="row justify-content-around">
+
+				<div data-wow-offset="300" class="col-md-6 first-half text-white wow slideInLeft ">
+					<h1 style="color:white; padding-top: 50px">ELEGANT CLOTHES</h1>
+					<p style="text-align: justify">We are the ELEGANT COLTHES group, We have many branches in westbank,
+						we have
+						the
+						first branch
+						in Nablus, and the second branch in jerusalem, and the third branch in hebron, and the forth
+						branch
+						in Ramallah, and the last branch in Jenin. We forward to fame our products, and increase our
+						sales, so
+						we have
+						to be the FIRST in saling clothes, which have High Quality
+					</p>
+					<h5>Location: Nablus/Rafedia</h5>
+					<h5>Phone:09 2398285</h5>
+
+				</div>
+				<div class="second-half container col-md-6">
+					<div class="row justify-content-between">
+						<div data-wow-offset="300" class="main-menu wow slideInRight col-6">
+							<h3 style="padding-top: 50px; color: white;">Main Menu</h3>
+							<ul class="d-flex flex-column">
+								<li>
+									<a href="#">Home</a>
+								</li>
+								<li>
+									<a href="#">About US</a>
+								</li>
+								<li>
+									<a href="#">Clothes</a>
+								</li>
+								<li>
+									<a href="#">Shoes</a>
+								</li>
+								<li>
+									<a href="#">Watches</a>
+								</li>
+								<li>
+									<a href="#">Watches</a>
+								</li>
+								<li>
+									<a href="#">Contact Us</a>
+								</li>
+							</ul>
+
+						</div>
+						<div data-wow-offset="300" class="social-media-footer wow slideInRight col-6 pt-4">
+							<h3 style="margin-top: 20px; color: white;">REACH US</h3>
+							<div style="font-size:35px ;" class="social-media">
+								<i style="margin-right:10px ;" class="fa-brands fa-facebook-f"></i>
+								<i style="margin-right:10px ;" class="fa-brands fa-whatsapp"></i>
+								<i style="margin-right:10px ;" class="fa-brands fa-instagram"></i>
+								<i class="fa-brands fa-linkedin-in"></i>
+							</div>
+
+
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+		<hr data-wow-offset="20" class="wow fadeInUp" style="border-top: 2px white solid; width: 68%; margin: auto; ">
+		<div data-wow-offset="20" class="copy-right wow fadeInUp">
+			<h6>Copyright &copy; Elegant Clothes - 2022</h6>
+
+		</div>
+
+
+	</footer>
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+
+		$(".step").click(function () {
+			$(this).addClass("active").prevAll().addClass("active");
+			$(this).nextAll().removeClass("active");
+		});
+
+		$(".step01").click(function () {
+			$("#line-progress").css("width", "3%");
+			$(".discovery").addClass("active").siblings().removeClass("active");
+		});
+
+		$(".step02").click(function () {
+			$("#line-progress").css("width", "25%");
+			$(".strategy").addClass("active").siblings().removeClass("active");
+		});
+
+		$(".step03").click(function () {
+			$("#line-progress").css("width", "50%");
+			$(".creative").addClass("active").siblings().removeClass("active");
+		});
+
+		$(".step04").click(function () {
+			$("#line-progress").css("width", "75%");
+			$(".production").addClass("active").siblings().removeClass("active");
+		});
+
+		$(".step05").click(function () {
+			$("#line-progress").css("width", "100%");
+			$(".analysis").addClass("active").siblings().removeClass("active");
+		});
+
+
+	</script>
+	<script>
+		new WOW().init();
+	</script>
+	<script src="assets/js/test.js"></script>
+	<script src="assets/js/bill.js"></script>
+
+
+	<script src="assets/js/login.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="assets/js/mutual.js"></script>
+
+
+
+</body>
+
+</html>

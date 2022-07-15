@@ -1,0 +1,127 @@
+
+
+.form{
+    width: 40%;
+    margin: auto;
+}
+.check-bar{
+   margin: auto;
+   width: 40%;
+}
+.number{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.text-numeric{
+    font-size: 28px;
+    text-align: justify;
+}
+
+.text-numeric > i{
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.line{
+    height: 3px;
+    width: 160px;
+    background-color: black;
+    margin-top: 31px;
+}
+
+
+
+.icon-form{
+    width: 80px;
+    font-size: 35px;
+    text-align: center;
+}
+
+select{
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    padding: 10px 10px 10px 10px;
+}
+
+
+.thank-pop-up{
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    display: none;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    
+    
+}
+
+.check-done{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: chartreuse;
+    position: absolute;
+    margin-top: -55px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.check-done > i{
+    font-size: 50px;
+    margin-top: 20px;
+    color: white;
+}
+
+.thank-logo{
+    text-align: center;
+    margin-top: 80px;
+
+}
+.acknlgmnt{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pop-up-btn{
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.pop-up-btn button{
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 45px;
+    background-color: chartreuse;
+    color: white;
+}
+
+
+.opps-pop-up{
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: white ;
+    z-index: 10000000;
+    top: 40%;
+    left: 40%;
+    
+
+}
+
